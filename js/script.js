@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const cerrar = document.querySelector(".cerrar");
     const list = document.querySelector(".list-nav");
 
-    const logotipoNormal = "../imgs/logotipo_web.svg";
-    const logotipoScroll = "../imgs/iconweb.svg";
+    const logotipoNormal = "/imgs/logotipo_web.svg";
+    const logotipoScroll = "/imgs/iconweb.svg";
 
     // Cambia el estilo del header al hacer scroll
     window.addEventListener("scroll", function () {
@@ -38,15 +38,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Precarga de imágenes
     const images = [
-        "../imgs/8.jpg",
-        "../imgs/9.jpg",
-        "../imgs/10.jpg",
-        "../imgs/11.jpg",
-        "../imgs/12.jpg",
-        "../imgs/13.jpg",
-        "../imgs/14.jpg",
-        "../imgs/15.jpg",
-        "../imgs/16.jpg"
+        "./imgs/8.jpg",
+        "./imgs/9.jpg",
+        "./imgs/10.jpg",
+        "./imgs/11.jpg",
+        "./imgs/12.jpg",
+        "./imgs/13.jpg",
+        "./imgs/14.jpg",
+        "./imgs/15.jpg",
+        "./imgs/16.jpg"
     ];
 
     images.forEach((src) => {
