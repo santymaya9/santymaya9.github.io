@@ -962,3 +962,49 @@ footer {
     background-color: #4caf50;
     /* Verde sólido para el indicador activo */
 }
+
+/* General styles for mobile devices */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+
+    .navigation .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu a {
+        margin: 5px 0;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-column {
+        margin-bottom: 20px;
+    }
+
+    .gallery .col-lg-4 {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .container-three img {
+        width: 100%;
+        height: auto;
+    }
+
+    .table {
+        font-size: 12px;
+    }
+
+    .glide__arrows {
+        display: none;
+        /* Hide arrows on smaller screens */
+    }
+}
