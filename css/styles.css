@@ -1,0 +1,964 @@
+/* Variables de colores */
+:root {
+    --primary-color: #4caf50;
+    /* Verde claro */
+    --secondary-color: #ffffff;
+    /* Blanco */
+    --hover-color: #388e3c;
+    /* Verde oscuro */
+    --background-color: #e8f5e9;
+    /* Fondo verde claro */
+}
+
+
+
+/* Reset general */
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+
+/* Menú compacto */
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(76, 175, 80, 0.8);
+    /* Fondo semitransparente */
+    z-index: 1000;
+    padding: 5px 0;
+    /* Reduce el padding para hacerlo más compacto */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    /* Transición suave al hacer scroll */
+}
+
+/* Cambia el fondo del menú al hacer scroll */
+.navigation.scrolled {
+    background-color: var(--primary-color);
+    /* Fondo sólido al hacer scroll */
+}
+
+/* Estilo para los enlaces del menú */
+.menu {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.menu a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: var(--hover-color);
+}
+
+
+/* Carrusel */
+.container-one {
+    margin-top: 80px;
+    /* Ajusta este valor según la altura del menú */
+    text-align: center;
+    display: flex;
+    /* Habilita el modelo de caja flexible */
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    flex-direction: column;
+    /* Asegura que el título y el carrusel estén en columna */
+}
+
+.carrusel-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    /* Reduce el ancho del carrusel al 80% */
+    max-width: 800px;
+    /* Limita el ancho máximo del carrusel */
+    margin: 0 auto;
+    /* Centra el carrusel horizontalmente */
+    height: 500px;
+    /* Ajusta la altura del carrusel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Oculta cualquier contenido que exceda el contenedor */
+}
+
+.carousel-inner img {
+    width: 100%;
+    /* Asegura que las imágenes ocupen todo el ancho del contenedor */
+    height: 100%;
+    /* Asegura que las imágenes ocupen toda la altura del contenedor */
+    object-fit: cover;
+    /* Recorta las imágenes para llenar el espacio sin deformarse */
+    border-radius: 10px;
+    display: inline-block;
+
+    /* Bordes redondeados para las imágenes */
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-100%);
+    /* Centra los indicadores horizontalmente */
+}
+
+.carousel-indicators button {
+    background-color: var(--secondary-color);
+}
+
+.carousel-indicators .active {
+    background-color: var(--hover-color);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+    /* Cambia los íconos a blanco */
+}
+
+/* Sección "Sobre nosotros" */
+.informacion {
+    padding: 50px 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('../imgs/19.jpg') no-repeat center center;
+    /* Imagen de fondo */
+    background-size: cover;
+    /* Asegura que la imagen cubra todo el contenedor */
+    color: var(--secondary-color);
+    /* Texto blanco */
+    text-align: center;
+    border-radius: 10px;
+    /* Bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra para destacar */
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.informacion h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.informacion p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.informacion ul {
+    text-align: left;
+    margin: 20px auto;
+    padding: 0 20px;
+    max-width: 800px;
+    list-style-type: disc;
+    color: var(--secondary-color);
+}
+
+.informacion ul li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Galería */
+.container.gallery {
+    padding: 50px 20px;
+    background-color: var(--background-color);
+    /* Fondo verde claro */
+    text-align: center;
+    border-radius: 10px;
+    /* Bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra ligera */
+    margin: 20px auto;
+    /* Centra la galería horizontalmente */
+    max-width: 1150px;
+    /* Ancho máximo */
+}
+
+.container.gallery h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: var(--hover-color);
+}
+
+.container-three {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.container-three img {
+    width: 100%;
+    height: 200px;
+    /* Establece una altura fija */
+    object-fit: cover;
+    /* Ajusta las imágenes para que llenen el contenedor */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    /* Fondo para imágenes más pequeñas */
+}
+
+.container-three img:hover {
+    transform: scale(1.05);
+    /* Efecto de zoom al pasar el cursor */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    /* Sombra para destacar */
+}
+
+/* Footer */
+#footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    gap: 20px;
+    /* Espaciado entre columnas */
+}
+
+.footer-column {
+    flex: 1;
+    max-width: 300px;
+    /* Limita el ancho de las columnas */
+    text-align: center;
+}
+
+.footer-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--hover-color);
+    text-decoration: underline;
+}
+
+.footer-logo {
+    width: 72%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    /* Bordes redondeados */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Animación suave */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre la imagen */
+}
+
+.footer-logo:hover {
+    transform: scale(1.05);
+    /* Efecto de zoom al pasar el cursor */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    /* Sombra para destacar */
+}
+
+.footer-column h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.footer-column p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Espaciado entre el ícono y el texto */
+    font-size: 1rem;
+    color: var(--secondary-color);
+}
+
+.footer-column i {
+    font-size: 1.2rem;
+    /* Tamaño del ícono */
+    color: var(--hover-color);
+    /* Color del ícono */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    background-color: var(--hover-color);
+    color: var(--secondary-color);
+    padding: 10px 0;
+    font-size: 0.9rem;
+}
+
+.footer-bottom a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Botones */
+button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Carrusel con botones */
+.slider-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    /* Oculta las imágenes fuera del contenedor */
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    /* Animación suave al deslizar */
+}
+
+.slider-item {
+    flex: 0 0 100%;
+    /* Cada imagen ocupa el 100% del contenedor */
+    width: 100%;
+    object-fit: contain;
+    /* Ajusta las imágenes sin recortarlas */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra para destacar */
+}
+
+/* Botones del carrusel */
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.slider-button.prev {
+    left: 10px;
+}
+
+.slider-button.next {
+    right: 10px;
+}
+
+.slider-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Botón para regresar */
+.back-button-container {
+    text-align: center;
+    margin: 20px 0;
+    /* Espaciado superior e inferior */
+}
+
+.back-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+    /* Efecto de zoom al pasar el cursor */
+}
+
+/* Carrusel personalizado */
+#carrusel {
+    max-width: 800px;
+    margin: 0 auto;
+    /* Centra el carrusel */
+}
+
+.carousel-inner img {
+    width: 100%;
+    /* Asegura que las imágenes ocupen todo el ancho del contenedor */
+    height: 400px;
+    /* Ajusta la altura de las imágenes */
+    object-fit: cover;
+    /* Recorta las imágenes para llenar el espacio sin deformarse */
+    border-radius: 10px;
+    /* Bordes redondeados para las imágenes */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Animación suave */
+}
+
+.carousel-inner img:hover {
+    transform: scale(1.05);
+    /* Efecto de zoom al pasar el cursor */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    /* Sombra para destacar */
+}
+
+.carousel-indicators button {
+    background-color: var(--primary-color);
+    /* Color personalizado para los indicadores */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+    /* Cambia los íconos a blanco */
+}
+
+/* Estilo para la tabla de producción */
+#tabla-produccion {
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#tabla-produccion h2 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.table th {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-weight: 600;
+    padding: 10px;
+}
+
+.table td {
+    background-color: #e8f5e9;
+    /* Fondo claro */
+    padding: 10px;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.table-bordered {
+    border: 1px solid var(--primary-color);
+}
+
+.table-bordered td,
+.table-bordered th {
+    border: 1px solid var(--primary-color);
+}
+
+.table-total td {
+    background-color: var(--hover-color);
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+/* Estilo para la sección de caracterización */
+#caracterizacion {
+    background-color: var(--background-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#caracterizacion h2 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#caracterizacion img {
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Agrega la animación */
+    cursor: pointer;
+    /* Cambia el cursor al pasar sobre la imagen */
+}
+
+#caracterizacion img:hover {
+    transform: scale(1.05);
+    /* Efecto de zoom al pasar el cursor */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    /* Sombra para destacar */
+}
+
+#caracterizacion ul {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+#caracterizacion ul li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: var(--primary-color);
+    line-height: 1.6;
+}
+
+#caracterizacion ul li strong {
+    color: var(--hover-color);
+    font-weight: 600;
+}
+
+/* Estilo para los títulos principales de las secciones */
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #4caf50;
+    /* Verde consistente con el tema */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Título de la galería */
+#galeria h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #4caf50;
+    /* Aplica el mismo verde que los demás títulos */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#caracterizacion h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #4caf50;
+    /* Aplica el mismo verde que los demás títulos */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Título de la tabla de producción anual */
+#tabla-produccion h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #4caf50;
+    /* Aplica el mismo verde que los demás títulos */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el título principal */
+/* Estilo para el título principal */
+.main-title {
+    font-size: 4rem;
+    /* Aumenta el tamaño del título */
+    font-weight: 800;
+    /* Más negrita */
+    color: white;
+    /* Color principal */
+    text-align: center;
+    /* Centra el texto */
+    margin: 20px 0;
+    /* Reduce el espaciado superior e inferior */
+    text-transform: uppercase;
+    /* Convierte el texto a mayúsculas */
+    letter-spacing: 3px;
+    /* Aumenta el espaciado entre letras */
+    animation: glow 2s infinite alternate;
+    /* Aplica la animación */
+}
+
+/* Estilo para el subtítulo */
+.main-subtitle {
+    font-size: 1.5rem;
+    /* Tamaño del subtítulo */
+    font-weight: 400;
+    /* Peso más ligero */
+    color: rgb(10, 63, 10);
+    /* Color secundario */
+    text-align: center;
+    /* Centra el texto */
+    margin-top: -10px;
+    /* Reduce el espacio entre el título y el subtítulo */
+    font-style: italic;
+    /* Da un estilo cursivo al subtítulo */
+}
+
+
+/* Animación de brillo */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color), 0 0 20px var(--hover-color);
+    }
+
+    100% {
+        text-shadow: 0 0 10px var(--hover-color), 0 0 20px var(--hover-color), 0 0 30px var(--hover-color);
+    }
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #4CAF50;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.main-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.informacion {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    max-width: 1145px;
+    /* Igual al ancho de la galería */
+    margin: 0 auto;
+    /* Centra el footer horizontalmente */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+#carrusel {
+    background-color: var(--background-color);
+    /* Fondo verde claro */
+    padding: 20px;
+    border-radius: 10px;
+    /* Bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra ligera */
+    margin: 20px auto;
+    max-width: 1200px;
+    /* Ancho máximo */
+}
+
+.carousel-inner img {
+    height: 400px;
+    /* Ajusta la altura de las imágenes */
+    object-fit: cover;
+    /* Recorta las imágenes para llenar el espacio sin deformarse */
+    border-radius: 10px;
+    /* Bordes redondeados para las imágenes */
+    margin-left: 0;
+    /* Asegura que las imágenes estén alineadas a la izquierda */
+    transform: translateX(-10px);
+    /* Opcional: mueve las imágenes ligeramente hacia la izquierda */
+    transition: transform 0.3s ease;
+    /* Animación suave al mover */
+}
+
+.carousel-inner img:hover {
+    transform: translateX(-100px) scale(1.05);
+    /* Efecto de zoom y movimiento al pasar el cursor */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    /* Sombra para destacar */
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    /* Ajusta la altura del carrusel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Oculta cualquier contenido que exceda el contenedor */
+    border-radius: 10px;
+    /* Bordes redondeados */
+}
+
+.carousel-inner img {
+    width: 100%;
+    /* Asegura que las imágenes ocupen todo el ancho del contenedor */
+    height: 100%;
+    /* Asegura que las imágenes ocupen toda la altura del contenedor */
+    object-fit: cover;
+    /* Recorta las imágenes para llenar el espacio sin deformarse */
+    border-radius: 10px;
+    /* Bordes redondeados */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #4CAF50;
+    /* Fondo verde del header */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Asegura que los bloques tengan un fondo blanco o el color deseado */
+.informacion,
+#tabla-produccion,
+#caracterizacion,
+.container.gallery,
+#carrusel,
+footer {
+    background-color: #f1f1f1;
+    /* Fondo blanco para los bloques */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra para destacar */
+    padding: 20px;
+    /* Espaciado interno */
+    margin: 20px auto;
+    /* Espaciado externo */
+}
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    /* Ajusta la altura del carrusel */
+    display: flex;
+    justify-content: center;
+    /* Centra las imágenes horizontalmente */
+    align-items: center;
+    /* Centra las imágenes verticalmente */
+    overflow: hidden;
+    /* Oculta cualquier contenido que exceda el contenedor */
+    border-radius: 10px;
+    /* Bordes redondeados */
+}
+
+.carousel-inner img {
+    max-width: 100%;
+    /* Asegura que las imágenes no excedan el ancho del contenedor */
+    max-height: 100%;
+    /* Asegura que las imágenes no excedan la altura del contenedor */
+    object-fit: contain;
+    /* Ajusta las imágenes sin recortarlas */
+    display: block;
+    /* Asegura que las imágenes se comporten como bloques */
+    margin: auto;
+    /* Centra las imágenes dentro del contenedor */
+    border-radius: 10px;
+    /* Bordes redondeados */
+}
+
+.swiper {
+    width: 100%;
+    height: 400px;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container-three img {
+    width: 100%;
+    /* Asegura que las imágenes ocupen todo el ancho del contenedor */
+    height: 200px;
+    /* Establece una altura fija para todas las imágenes */
+    object-fit: cover;
+    /* Recorta las imágenes para llenar el espacio sin deformarse */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra para un diseño limpio */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Animación suave */
+}
+
+.container-three img:hover {
+    transform: scale(1.05);
+    /* Efecto de zoom al pasar el cursor */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    /* Sombra más pronunciada al pasar el cursor */
+}
+
+.container-three .col-lg-4 {
+    padding: 10px;
+    /* Espaciado entre las imágenes */
+}
+
+/* Contenedor del carrusel */
+/* Contenedor del carrusel */
+#carrusel {
+    background-color: #f5f5f5;
+    /* Fondo claro */
+    border: 2px solid #4caf50;
+    /* Borde verde */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra ligera */
+    position: relative;
+    /* Para posicionar los botones */
+    padding: 20px;
+    max-width: 1200px;
+    /* Ancho máximo del carrusel */
+    margin: 0 auto;
+    /* Centra el carrusel */
+}
+
+/* Imágenes del carrusel */
+.glide__slide img {
+    width: 100%;
+    /* Ocupa todo el ancho del contenedor */
+    height: 400px;
+    /* Altura fija para todas las imágenes */
+    object-fit: contain;
+    /* Ajusta las imágenes para que todo el contenido sea visible */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    display: block;
+    margin: 0 auto;
+    /* Centra las imágenes horizontalmente */
+    background-color: #fff;
+    /* Fondo blanco para imágenes con transparencia */
+}
+
+/* Botones del carrusel */
+.glide__arrow {
+    position: absolute;
+    top: 50%;
+    /* Centra verticalmente */
+    transform: translateY(-50%);
+    background-color: rgba(76, 175, 80, 0.8);
+    /* Fondo verde semitransparente */
+    color: #fff;
+    /* Color blanco para las flechas */
+    border: none;
+    border-radius: 50%;
+    /* Forma circular */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra */
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    z-index: 10;
+    /* Asegura que estén por encima de las imágenes */
+}
+
+.glide__arrow--left {
+    left: 10px;
+    /* Posiciona el botón izquierdo */
+}
+
+.glide__arrow--right {
+    right: 10px;
+    /* Posiciona el botón derecho */
+}
+
+.glide__arrow:hover {
+    background-color: #388e3c;
+    /* Verde más oscuro al pasar el cursor */
+}
+
+/* Indicadores del carrusel */
+.glide__bullets {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.glide__bullet {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(76, 175, 80, 0.5);
+    /* Verde semitransparente */
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.glide__bullet--active {
+    background-color: #4caf50;
+    /* Verde sólido para el indicador activo */
+}
